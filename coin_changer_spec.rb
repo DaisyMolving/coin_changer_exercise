@@ -19,8 +19,13 @@ let(:coin_change) { CoinChanger.new }
 	 expect(result).to eq [5]
   end
 
-  it 'takes an amount of 6 and returns a 6 coin' do
+  it 'takes an amount of 6 and returns a 5 and a 1 coin' do
 	 result = coin_change.give_coins(6)
 	 expect(result).to eq [5, 1]
+  end
+
+  it 'takes an amount of 11 and returns a 10 and a 1 coin' do
+	 result = coin_change.give_coins(11)
+	 expect(result).to eq [10, 1]
   end
 end
