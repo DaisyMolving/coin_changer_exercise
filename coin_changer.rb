@@ -1,13 +1,16 @@
 class CoinChanger
 
   def give_coins(amount)
-	 if amount == 0
-		[]
-	 elsif amount == 1
-		[1]
-	 elsif amount == 5
-		[5]
+	 coins = []
+	 while amount >= 5
+		coins << 5
+		amount -= 5
 	 end
+	 while amount >= 1
+		coins << 1
+		amount -= 1
+	 end
+	 coins
   end
 
 end
