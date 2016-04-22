@@ -1,18 +1,14 @@
 class CoinChanger
 
+  COIN_VALUES = [10, 5, 1]
+
   def give_coins(amount)
 	 coins = []
-	 while amount >= 10
-		coins << 10
-		amount -= 10
-	 end
-	 while amount >= 5
-		coins << 5
-		amount -= 5
-	 end
-	 while amount >= 1
-		coins << 1
-		amount -= 1
+	 COIN_VALUES.each do |coin_value|
+		while amount >= coin_value
+		  coins << coin_value
+		  amount -= coin_value
+		end
 	 end
 	 coins
   end
