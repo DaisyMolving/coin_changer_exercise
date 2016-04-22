@@ -49,4 +49,8 @@ let(:coin_change) { CoinChanger.new }
 	 result = coin_change.give_coins(200)
 	 expect(result).to eq [200]
   end
+  it 'takes an amount that uses all coins and returns appropriate array of coin' do
+	 result = coin_change.give_coins(388)
+	 expect(result).to eq [200, 100, 50, 20, 10, 5, 2, 1]
+  end
 end
